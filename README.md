@@ -9,18 +9,21 @@ Instruments your Rails application to capture and aggregate database query execu
 This gem instruments your database traffic. Here's exactly what leaves your process and what never does:
 
 **What leaves your process (sent to Query-Cost APM backend):**
+
 - **Sanitized query fingerprints** — the query shape with all literal values replaced by placeholders (e.g., `SELECT * FROM users WHERE id = ?`)
 - **Aggregate metrics** — call count, total duration, min/max query times, per fingerprint
 - **Call site metadata** — the Rails application code location (controller/model/view) that triggered the query, used for attribution but never for grouping queries (multiple call sites map to the same query fingerprint)
 - **Your API key** and environment name (production, staging, etc.)
 
 **What never leaves your process:**
+
 - Raw parameter values (user IDs, emails, payment amounts, etc.)
 - Row data or result sets
 - Raw SQL text (only sanitized fingerprints)
 - Passwords, secrets, PII, or PHI — the sanitizer is designed to exclude these
 
 **How it works:**
+
 - The gem uses Rails' `ActiveSupport::Notifications` hook to observe queries *after* they complete, never blocking your application's request path.
 - Query sanitization happens entirely within your process; sensitive values are never even serialized into the exporter's buffer.
 - All exports are gzipped HTTPS with a timeout; export failures don't block your app.
@@ -37,11 +40,17 @@ gem 'query_cost_apm'
 
 And then execute:
 
-    $ bundle install
+```
+$ bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install query_cost_apm
+```
+$ gem install query_cost_apm
+```
+
+
 
 ## Usage
 
@@ -68,8 +77,10 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 ## Security & Contributing
 
 - This gem is designed with defense-in-depth sanitization. Please review `lib/query_cost_apm/sanitizer.rb` if you have concerns about what leaves your process.
-- Bug reports and security issues: open an issue on GitHub at https://github.com/sushant-behal/query-cost-apm-ruby.
+- Bug reports and security issues: open an issue on GitHub at [https://github.com/asentrix21/query-cost-sdk](https://github.com/sushant-behal/query-cost-apm-ruby).
 - For security concerns specific to sanitization, please email privately rather than opening a public issue.
+
+
 
 ## License
 
