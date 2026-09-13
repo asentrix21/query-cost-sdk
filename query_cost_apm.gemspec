@@ -5,18 +5,18 @@ require_relative "lib/query_cost_apm/version"
 Gem::Specification.new do |spec|
   spec.name = "query_cost_apm"
   spec.version = QueryCostApm::VERSION
-  spec.authors = ["sushantbehal"]
+  spec.authors = ["asentrix21"]
   spec.email = ["sushantbehal.awge@gmail.com"]
 
   spec.summary = "Cost-first query observability for Rails applications"
   spec.description = "Cost-first database query observability SDK for Rails. Instruments queries, sanitizes for PII/PHI, fingerprints by shape, and aggregates metrics with call-site attribution. Ships periodic rollups to the Query-Cost APM backend for dashboarding. Defense-in-depth sanitization ensures sensitive values never leave your process."
-  spec.homepage = "https://github.com/sushant-behal/query-cost-apm-ruby"
+  spec.homepage = "https://github.com/asentrix21/query-cost-sdk"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   # Note: This gem is currently git-installed only (not published to RubyGems)
   # pending backend service deployment. Install from GitHub:
-  # gem 'query_cost_apm', git: 'https://github.com/sushant-behal/query-cost-apm-ruby.git'
+  # gem 'query_cost_apm', git: 'https://github.com/asentrix21/query-cost-sdk.git'
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
