@@ -77,10 +77,8 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 ## Security & Contributing
 
 - This gem is designed with defense-in-depth sanitization. Please review `lib/query_cost_apm/sanitizer.rb` if you have concerns about what leaves your process.
-- Bug reports and security issues: open an issue on GitHub at [https://github.com/asentrix21/query-cost-sdk](https://github.com/sushant-behal/query-cost-apm-ruby).
+- Bug reports and security issues: open an issue on GitHub at [https://github.com/asentrix21/query-cost-sdk].
 - For security concerns specific to sanitization, please email privately rather than opening a public issue.
-
-
 
 ## License
 
